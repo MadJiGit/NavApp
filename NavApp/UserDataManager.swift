@@ -15,7 +15,6 @@ import FirebaseStorage
 class UserDataManager {
     
     static let shared = UserDataManager()
-//    private var storage: StorageData?
     
     var uid: String?
     var email: String?
@@ -26,40 +25,41 @@ class UserDataManager {
     
     private init() {}
     
-    func setUserData(user: FirebaseAuth.User!){
-        self.uid = user.uid
-        self.email = user.email
-        self.displayName = user.displayName
-        self.photoUrlString = user.photoURL?.absoluteString
-
-//        loadStorageData(uid: uid!, photoUrlString: photoUrlString!)
-    }
-    
-
-    
-    func refreshUserData() {
+    func loadData() {
         
-        guard let reloadedUser = Auth.auth().currentUser else {
-            print("Error trying to get curretn user")
+        guard let currentUser = Auth.auth().currentUser else {
+            print("Can't load current user")
             return
         }
-        
-        reloadedUser.reload(completion: {[weak self] (error) in
-            if error != nil {
-                print("Error reload user data")
-                return
-            }
-        })
-        
-        
-        self.email = reloadedUser.email
-        self.displayName = reloadedUser.displayName
-        self.photoUrlString = reloadedUser.photoURL?.absoluteString
+        refreshData(from: currentUser)
+        //        StorageDataManager.shared.setStorageData(user: currentUser)
     }
     
+    private func refreshData(from fbUser: FirebaseAuth.User){
+        uid = fbUser.uid
+        email = fbUser.email
+        displayName = fbUser.displayName
+        photoUrlString = fbUser.photoURL?.absoluteString
+    }
     
-    
-    
+    //    func refreshUserData() {
+    //
+    //        guard let reloadedUser = Auth.auth().currentUser else {
+    //            print("Error trying to get curretn user")
+    //            return
+    //        }
+    //
+    //        reloadedUser.reload(completion: {[weak self] (error) in
+    //            if error != nil {
+    //                print("Error reload user data")
+    //                return
+    //            }
+    //        })
+    //
+    //        self.email = reloadedUser.email
+    //        self.displayName = reloadedUser.displayName
+    //        self.photoUrlString = reloadedUser.photoURL?.absoluteString
+    //    }
 }
 
 extension UserDataManager {
@@ -70,17 +70,24 @@ extension UserDataManager {
         })
     }
     
-//    func loadStorageData(uid: String, photoUrlString: String){
-//        storage = StorageData.shared.setStorageData(uid: uid, photoUrlString: photoUrlString)
-//    }
+    func loadStorageData(uid: String, photoUrlString: String){
+//        storage = StorageDataManager.shared.setStorageData(uid: uid, photoUrlString: photoUrlString)
+    }
+    
+    func getCurrentUserProfileImage() {
+        
+//        return storage!.getCurrentUserProfileImage()
+        
+    }
     
 //    func getCurrentUserProfileImage() -> UIImage {
 //
-//        return storage!.getCurrentUserProfileImage()
+////        return storage!.getCurrentUserProfileImage()
+//
 //    }
     
-    func getCurrentUser() ->                 UserDataManager {
-        return                 UserDataManager.shared
+    func getCurrentUser() -> UserDataManager {
+        return UserDataManager.shared
     }
     
     func getCurrentUserDisplayName() -> String {
@@ -95,46 +102,4 @@ extension UserDataManager {
     func getCurrenUserProfileImageString() -> String {
         return photoUrlString ?? ""
     }
-    
-    /*
-    private func loadProfileImage(_ photoUrl: String?) {
-        guard let userId = uid else {
-            print("Error get userId")
-            return
-        }
-        let storageRef = storage.reference()
-        let imagePhotoUrl = storageRef.child("avatars/\(userId).jpg")
-        
-        imagePhotoUrl.getMetadata{ (metadata, err) in
-            
-            guard let metadata = metadata else {
-                if err != nil {
-                    print("Error loading photo")
-                }
-                
-                return
-            }
-            
-            imagePhotoUrl.getData(maxSize: metadata.size) { (data, err) in
-                
-                guard let unwrappedData = data else {
-                    if err != nil {
-                        print("Error loading photo")
-                    }
-                    
-                    return
-                }
-                
-                guard let profileImageTemp = UIImage(data: unwrappedData) else {
-                    print("No image data")
-                    return
-                }
-//                self.profileInfoImageView.image = loadedImage
-                self.profileImage = profileImageTemp
-                
-            }
-        }
-    }
- */
-    
 }

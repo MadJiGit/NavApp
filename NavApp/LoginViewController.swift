@@ -39,11 +39,17 @@ class LoginViewController: UIViewController {
         AuthentificationManager.loginUser(with: email, password: password) { (success: Bool, error: Error?) in
             if success {
                 self.redirectToHomePage()
-            } else {
-                self.redirectToLoginPage()
+            } else if let error = error as NSError? {
+                switch error.code {
+                case AuthErrorCode.invalidEmail.rawValue,
+                     AuthErrorCode.wrongPassword.rawValue:
+                    print("Wrong pass or email")
+                    self.redirectToLoginPage()
+                default:
+                    print("Error auth method")
+                }
             }
         }
-        
     }
     
     private func redirectToHomePage(){

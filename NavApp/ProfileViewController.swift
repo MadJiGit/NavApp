@@ -30,7 +30,7 @@ class ProfileViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let editProfileViewConroller = segue.destination as? EditProfileViewController {
-            editProfileViewConroller.delegateTest = self
+//            editProfileViewConroller.delegateTest = self
         }
     }
     
@@ -46,12 +46,12 @@ class ProfileViewController: UIViewController {
     }
 }
 
-extension ProfileViewController : EditProfileViewControllerDelegate {
-    
-    func reloadUserDataToProfileViewController(_ viewController: EditProfileViewController) { UserDataManager.shared.refreshUserData()
-        getCurrUser()
-    }
-}
+//extension ProfileViewController : EditProfileViewControllerDelegate {
+//
+////    func reloadUserDataToProfileViewController(_ viewController: EditProfileViewController) { UserDataManager.shared.refreshData()
+//        getCurrUser()
+//    }
+//}
 
 extension ProfileViewController {
     

@@ -17,20 +17,19 @@ class ProfileViewController: UIViewController {
     var storage: StorageDataManager?
     @IBOutlet weak var profileInfoTextView: UITextView!
     @IBOutlet weak var profileInfoImageView: UIImageView!
-    
     var loadedImage: UIImage?
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         hideKeyboardWhenTappedAround()
         
-        getCurrUser()
+        getCurrentUser()
+        getStorageData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let editProfileViewConroller = segue.destination as? EditProfileViewController {
-//            editProfileViewConroller.delegateTest = self
+            editProfileViewConroller.delegateTest = self
         }
     }
     
@@ -46,12 +45,12 @@ class ProfileViewController: UIViewController {
     }
 }
 
-//extension ProfileViewController : EditProfileViewControllerDelegate {
-//
-////    func reloadUserDataToProfileViewController(_ viewController: EditProfileViewController) { UserDataManager.shared.refreshData()
-//        getCurrUser()
-//    }
-//}
+extension ProfileViewController : EditProfileViewControllerDelegate {
+
+    func reloadUserDataToProfileViewController(_ viewController: EditProfileViewController) {
+        getCurrentUser()
+    }
+}
 
 extension ProfileViewController {
     
@@ -61,56 +60,16 @@ extension ProfileViewController {
     }
     
     
-//    func loadProfileImage(_ photoUrl: String?) {
-//        guard let userId = user?.uid else {
-//            print("Error get userId")
-//            return
-//        }
-//        let storageRef = storage.reference()
-//        let imagePhotoUrl = storageRef.child("avatars/\(userId).jpg")
-//        
-//        imagePhotoUrl.getMetadata{ (metadata, err) in
-//            
-//            guard let metadata = metadata else {
-//                if err != nil {
-//                    print("Error loading photo")
-//                }
-//                
-//                return
-//            }
-//            
-//            imagePhotoUrl.getData(maxSize: metadata.size) { (data, err) in
-//                
-//                guard let unwrappedData = data else {
-//                    if err != nil {
-//                        print("Error loading photo")
-//                    }
-//                    
-//                    return
-//                }
-//                
-//                if self.loadedImage != UIImage(data: unwrappedData) {
-//                    print("No image data")
-//                    return
-//                }
-////                self.profileInfoImageView.image = loadedImage
-//            }
-//        }
-//    }
-    
     func showUserInfoImageView(){
-        
-        if (self.loadedImage == nil) {
-//            self.profileInfoImageView.image = loadedImage
-//            self.profileInfoImageView.image = self.user?.getCurrentUserProfileImage()
-        }
+        loadedImage = storage?.getCurrentUserProfileImage()
+        profileInfoImageView.image = loadedImage
     }
     
     func getStorageData(){
         storage = StorageDataManager.shared.getStorageData()
     }
     
-    func getCurrUser(){
+    func getCurrentUser(){
         user = UserDataManager.shared.getCurrentUser()
         if user?.displayName == nil {
             replaceUserInfoText(user!.email, profileInfoTextView)

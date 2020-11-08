@@ -17,7 +17,7 @@
 		0444F601252BAAAC008DA3ED /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0444F600252BAAAC008DA3ED /* GoogleService-Info.plist */; };
 		047CE57E2555A44900304CF0 /* StorageDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047CE57D2555A44900304CF0 /* StorageDataManager.swift */; };
 		047EF50D253B955400FEA715 /* UserDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047EF50C253B955400FEA715 /* UserDataManager.swift */; };
-		047EF513253CD26C00FEA715 /* AuthDataFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047EF512253CD26C00FEA715 /* AuthDataFirebase.swift */; };
+		047EF513253CD26C00FEA715 /* AuthDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047EF512253CD26C00FEA715 /* AuthDataManager.swift */; };
 		04D25605252B42DF0041FB47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D25604252B42DF0041FB47 /* AppDelegate.swift */; };
 		04D25607252B42DF0041FB47 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D25606252B42DF0041FB47 /* SceneDelegate.swift */; };
 		04D25609252B42E00041FB47 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D25608252B42E00041FB47 /* EditProfileViewController.swift */; };
@@ -38,7 +38,7 @@
 		0444F600252BAAAC008DA3ED /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		047CE57D2555A44900304CF0 /* StorageDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageDataManager.swift; sourceTree = "<group>"; };
 		047EF50C253B955400FEA715 /* UserDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataManager.swift; sourceTree = "<group>"; };
-		047EF512253CD26C00FEA715 /* AuthDataFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDataFirebase.swift; sourceTree = "<group>"; };
+		047EF512253CD26C00FEA715 /* AuthDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDataManager.swift; sourceTree = "<group>"; };
 		04D25601252B42DF0041FB47 /* NavApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D25604252B42DF0041FB47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04D25606252B42DF0041FB47 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,7 +90,7 @@
 				04D25606252B42DF0041FB47 /* SceneDelegate.swift */,
 				0442759D252C5D6D005DA5B2 /* LoginViewController.swift */,
 				0442759B252C5D6D005DA5B2 /* ProfileViewController.swift */,
-				047EF512253CD26C00FEA715 /* AuthDataFirebase.swift */,
+				047EF512253CD26C00FEA715 /* AuthDataManager.swift */,
 				0442759C252C5D6D005DA5B2 /* RegisterViewController.swift */,
 				04152A55252C755C00B89E93 /* Main.storyboard */,
 				0419F928252F389A00301DCA /* ExtractDataBaseViewController.swift */,
@@ -242,7 +242,7 @@
 			files = (
 				0442759E252C5D6D005DA5B2 /* ProfileViewController.swift in Sources */,
 				04D2560B252B42E00041FB47 /* DataDocumentViewController.swift in Sources */,
-				047EF513253CD26C00FEA715 /* AuthDataFirebase.swift in Sources */,
+				047EF513253CD26C00FEA715 /* AuthDataManager.swift in Sources */,
 				0442759F252C5D6D005DA5B2 /* RegisterViewController.swift in Sources */,
 				04D25609252B42E00041FB47 /* EditProfileViewController.swift in Sources */,
 				044275A0252C5D6D005DA5B2 /* LoginViewController.swift in Sources */,

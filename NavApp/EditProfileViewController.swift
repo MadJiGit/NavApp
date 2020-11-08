@@ -17,7 +17,7 @@ import FirebaseStorage
 
 class EditProfileViewController: UIViewController {
     
-    var user:                 UserDataManager?
+    var user: UserDataManager?
     @IBOutlet weak var newUsernameField: UITextField!
     @IBOutlet weak var profileInfoTextView: UITextView!
     @IBOutlet weak var profileInfoImageView: UIImageView!
@@ -38,7 +38,7 @@ class EditProfileViewController: UIViewController {
         hideKeyboardWhenTappedAround()
         
         getCurrUser()
-        loadCurrentUserData()
+        showCurrentUserData()
     }
     
     @IBAction func choseProfilePictureButtonTapped(_ sender: UIButton) {
@@ -113,14 +113,14 @@ extension EditProfileViewController {
         }
     }
     
-    func loadCurrentUserData() {
+    func showCurrentUserData() {
         showDisplayNameTextView(user?.getCurrentUserDisplayName(), profileInfoTextView)
 //        profileInfoImageView.image = user?.getCurrentUserProfileImage()
 //        showProfileImageView(withImage: user?.getCurrentUserProfileImage(), profileInfoImageView)
     }
     
     func getCurrUser() {
-        user =                 UserDataManager.shared.getCurrentUser()
+        user = UserDataManager.shared.getCurrentUser()
     }
     
     func showDisplayNameTextView(_ name: String?, _ profileInfoTextView: UITextView ) {
@@ -156,7 +156,7 @@ extension EditProfileViewController {
                 } else {
                     self.delegateTest?.reloadUserDataToProfileViewController(self)
 //                    self.showDisplayNameTextView(name, self.profileInfoTextView)
-                    self.loadCurrentUserData()
+                    self.showCurrentUserData()
                     
                 }
             }

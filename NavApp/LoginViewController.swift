@@ -36,7 +36,7 @@ class LoginViewController: UIViewController {
         
         dismissKeyboard()
         
-        AuthentificationManager.loginUser(with: email, password: password) { (success: Bool, error: Error?) in
+        AuthDataManager.loginUser(with: email, password: password) { (success: Bool, error: Error?) in
             if success {
                 self.redirectToHomePage()
             } else if let error = error as NSError? {
@@ -51,6 +51,10 @@ class LoginViewController: UIViewController {
             }
         }
     }
+}
+
+
+extension LoginViewController {
     
     private func redirectToHomePage(){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -65,9 +69,6 @@ class LoginViewController: UIViewController {
         (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(loginNavController)
     }
 }
-
-
-
 
 
 

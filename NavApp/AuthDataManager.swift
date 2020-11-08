@@ -1,5 +1,5 @@
 //
-//  AuthDataFirebase.swift
+//  AuthDataManager.swift
 //  NavApp
 //
 //  Created by Madji on 18.10.20.
@@ -12,8 +12,9 @@ import FirebaseFirestore
 import FirebaseAuth
 
 typealias AuthLoginHandler = (Bool, Error?) -> Void
+typealias AuthRegisterHandler = (Bool, Error?) -> Void
 
-class AuthentificationManager {
+class AuthDataManager {
     
     static private var isAuth = false
     
@@ -37,7 +38,26 @@ class AuthentificationManager {
             
             isAuth = authResult.user != nil
             completion(true, nil)
+        }
+    }
+    
+    static func registerUser(with email: String?, password: String?, completion:
+                                @escaping AuthRegisterHandler) {
+        guard let email = email, let password = password else {
+            completion(false, nil)
+            return
+        }
+        
+        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
             
+            guard let authResult = authResult else {
+                print("Error with auth method")
+                completion(false, error)
+                return
+            }
+            
+            isAuth = authResult.user != nil
+            completion(true, nil)
         }
     }
     

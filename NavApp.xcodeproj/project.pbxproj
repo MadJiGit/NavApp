@@ -18,6 +18,7 @@
 		047CE57E2555A44900304CF0 /* StorageDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047CE57D2555A44900304CF0 /* StorageDataManager.swift */; };
 		047EF50D253B955400FEA715 /* UserDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047EF50C253B955400FEA715 /* UserDataManager.swift */; };
 		047EF513253CD26C00FEA715 /* AuthDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047EF512253CD26C00FEA715 /* AuthDataManager.swift */; };
+		04CFB92B2559BB540023D3D6 /* CreatePerformanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CFB92A2559BB540023D3D6 /* CreatePerformanceViewController.swift */; };
 		04D25605252B42DF0041FB47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D25604252B42DF0041FB47 /* AppDelegate.swift */; };
 		04D25607252B42DF0041FB47 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D25606252B42DF0041FB47 /* SceneDelegate.swift */; };
 		04D25609252B42E00041FB47 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D25608252B42E00041FB47 /* EditProfileViewController.swift */; };
@@ -39,6 +40,7 @@
 		047CE57D2555A44900304CF0 /* StorageDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageDataManager.swift; sourceTree = "<group>"; };
 		047EF50C253B955400FEA715 /* UserDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataManager.swift; sourceTree = "<group>"; };
 		047EF512253CD26C00FEA715 /* AuthDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDataManager.swift; sourceTree = "<group>"; };
+		04CFB92A2559BB540023D3D6 /* CreatePerformanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePerformanceViewController.swift; sourceTree = "<group>"; };
 		04D25601252B42DF0041FB47 /* NavApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D25604252B42DF0041FB47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04D25606252B42DF0041FB47 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 			children = (
 				047CE57D2555A44900304CF0 /* StorageDataManager.swift */,
 				04D25604252B42DF0041FB47 /* AppDelegate.swift */,
+				04CFB92A2559BB540023D3D6 /* CreatePerformanceViewController.swift */,
 				04D25606252B42DF0041FB47 /* SceneDelegate.swift */,
 				0442759D252C5D6D005DA5B2 /* LoginViewController.swift */,
 				0442759B252C5D6D005DA5B2 /* ProfileViewController.swift */,
@@ -253,6 +256,7 @@
 				0419F92B25304EB100301DCA /* ExtensionViewController.swift in Sources */,
 				04D25607252B42DF0041FB47 /* SceneDelegate.swift in Sources */,
 				0419F929252F389A00301DCA /* ExtractDataBaseViewController.swift in Sources */,
+				04CFB92B2559BB540023D3D6 /* CreatePerformanceViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,7 +400,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.me.TabApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.me.NavApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -415,7 +419,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.me.TabApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.me.NavApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

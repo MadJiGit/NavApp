@@ -23,8 +23,9 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         hideKeyboardWhenTappedAround()
         
-        getCurrentUser()
         getStorageData()
+        getCurrentUser()
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -59,10 +60,16 @@ extension ProfileViewController {
         profileInfoTextView.insertText("Welcome, \(name ?? "")")
     }
     
-    
     func showUserInfoImageView(){
-        loadedImage = storage?.getCurrentUserProfileImage()
-        profileInfoImageView.image = loadedImage
+        
+        StorageDataManager.shared.loadStorageRef() {
+            (success: Bool) in
+            if success {
+                self.loadedImage = StorageDataManager.shared.getCurrentUserProfileImage()
+                self.profileInfoImageView.image = self.loadedImage
+                print("showUserInfoImageView")
+            }
+        }
     }
     
     func getStorageData(){
@@ -76,7 +83,7 @@ extension ProfileViewController {
         } else {
             replaceUserInfoText(user!.displayName, profileInfoTextView)
         }
-//        loadProfileImage(user?.photoUrlString)
+
         showUserInfoImageView()
     }
     

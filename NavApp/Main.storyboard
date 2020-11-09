@@ -352,22 +352,77 @@
             </objects>
             <point key="canvasLocation" x="234" y="18"/>
         </scene>
-        <!--View All-->
+        <!--Create-->
         <scene sceneID="C55-cb-tiv">
             <objects>
-                <viewController id="zGn-lU-OS4" sceneMemberID="viewController">
+                <viewController id="zGn-lU-OS4" customClass="CreatePerformanceViewController" customModule="NavApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ING-Ev-wCl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uh0-6Q-HLb">
+                                <rect key="frame" x="67" y="169" width="240" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="alphabet" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLN-P6-E0D">
+                                <rect key="frame" x="150" y="281" width="74" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add Image"/>
+                                <connections>
+                                    <action selector="addImageButtonTapped:" destination="zGn-lU-OS4" eventType="touchUpInside" id="y2x-np-Wcc"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qdd-01-yVL">
+                                <rect key="frame" x="67" y="33" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <pickerView contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uBx-6f-8mG">
+                                <rect key="frame" x="0.0" y="352" width="375" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="W3U-0a-ErX">
+                                <rect key="frame" x="125" y="522" width="125" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Private"/>
+                                    <segment title="Public"/>
+                                </segments>
+                                <connections>
+                                    <action selector="performancePrivateStatus:" destination="zGn-lU-OS4" eventType="valueChanged" id="tHp-Ak-A81"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NlH-1S-DLH">
+                                <rect key="frame" x="167" y="568" width="40" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Share"/>
+                                <connections>
+                                    <action selector="shareButtonTapped:" destination="zGn-lU-OS4" eventType="touchUpInside" id="iZ2-r1-zNz"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F8r-Az-Wiv">
+                                <rect key="frame" x="67" y="211" width="240" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="alphabet" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="doM-Sm-OzT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="View All" id="jL6-pu-aUv" userLabel="Edit Document"/>
+                    <tabBarItem key="tabBarItem" title="Create" id="jL6-pu-aUv" userLabel="Edit Document"/>
                     <navigationItem key="navigationItem" id="VM8-mQ-UiC"/>
+                    <connections>
+                        <outlet property="performanceDescription" destination="F8r-Az-Wiv" id="NJh-Gf-hgl"/>
+                        <outlet property="performanceImage" destination="Qdd-01-yVL" id="wcW-RJ-WgP"/>
+                        <outlet property="performanceTitle" destination="uh0-6Q-HLb" id="XE1-Yx-hpI"/>
+                        <outlet property="performanceTypePicker" destination="uBx-6f-8mG" id="BBH-q8-7Xz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vd9-Qh-IHP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-425" y="18"/>
+            <point key="canvasLocation" x="-426.39999999999998" y="17.541229385307346"/>
         </scene>
         <!--Edit Profile View Controller-->
         <scene sceneID="cIH-lX-pWP">

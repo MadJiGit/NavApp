@@ -9,6 +9,9 @@
 import FirebaseStorage
 import FirebaseAuth
 
+typealias ImageLoadingHandler = (Bool) -> Void
+typealias ImageReadyHandler = (Bool) -> Void
+
 class StorageDataManager {
     
     static let shared = StorageDataManager()
@@ -23,8 +26,9 @@ class StorageDataManager {
 
 extension StorageDataManager {
     
-    private func loadStorageRef(){
+    func loadStorageRef(completion: @escaping ImageReadyHandler){
         guard let userId = Auth.auth().currentUser?.uid else {
+            completion(false)
             print("No user ID")
             return
         }
@@ -32,11 +36,19 @@ extension StorageDataManager {
         let storageRef = storage.reference()
         let imagePhotoUrl = storageRef.child("avatars/\(userId).jpg")
         
-        loadProfileImage(imagePhotoUrl: imagePhotoUrl)
-        
+        loadProfileImage(imagePhotoUrl: imagePhotoUrl) { (success: Bool)
+            in if success {
+                print("load image")
+                completion(true)
+            } else {
+                completion(false)
+                print("not load image")
+            }
+        }
     }
     
-    private func loadProfileImage(imagePhotoUrl: StorageReference) {
+    func loadProfileImage(imagePhotoUrl: StorageReference, completion:
+    @escaping ImageLoadingHandler) {
         imagePhotoUrl.getMetadata{ (metadata, err) in
             guard let metadata = metadata else {
                 if err != nil {
@@ -55,12 +67,13 @@ extension StorageDataManager {
                 
                 let image = UIImage(data: unwrappedData)
                 
-                if self.profileImage == nil {
+                if image == nil {
                     print("No image data")
                     return
                 }
-                
+        
                 self.profileImage = image
+                completion(true)
                 
             }
         }
@@ -70,14 +83,11 @@ extension StorageDataManager {
     }
     
     func getStorageData() -> StorageDataManager {
-        if false == StorageDataManager.isStorageDataExist {
-            self.loadStorageRef()
-        }
         return StorageDataManager.shared
     }
     
     func getCurrentUserProfileImage() -> UIImage? {
-            return self.profileImage
+        return self.profileImage
     }
     
 }

@@ -43,7 +43,8 @@ class AuthDataManager {
     
     static func registerUser(with email: String?, password: String?, completion:
                                 @escaping AuthRegisterHandler) {
-        guard let email = email, let password = password else {
+        guard let email = email,
+              let password = password else {
             completion(false, nil)
             return
         }

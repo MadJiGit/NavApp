@@ -11,6 +11,8 @@
 		0419F929252F389A00301DCA /* ExtractDataBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0419F928252F389A00301DCA /* ExtractDataBaseViewController.swift */; };
 		0419F92B25304EB100301DCA /* ExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0419F92A25304EB100301DCA /* ExtensionViewController.swift */; };
 		0419F92D2530857700301DCA /* DataDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0419F92C2530857700301DCA /* DataDocument.swift */; };
+		041B67B4255B31D700E271CB /* PerformanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041B67B3255B31D700E271CB /* PerformanceManager.swift */; };
+		041B67BB255B42D400E271CB /* PerformanceDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041B67BA255B42D400E271CB /* PerformanceDetailsViewController.swift */; };
 		0442759E252C5D6D005DA5B2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0442759B252C5D6D005DA5B2 /* ProfileViewController.swift */; };
 		0442759F252C5D6D005DA5B2 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0442759C252C5D6D005DA5B2 /* RegisterViewController.swift */; };
 		044275A0252C5D6D005DA5B2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0442759D252C5D6D005DA5B2 /* LoginViewController.swift */; };
@@ -33,6 +35,8 @@
 		0419F928252F389A00301DCA /* ExtractDataBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractDataBaseViewController.swift; sourceTree = "<group>"; };
 		0419F92A25304EB100301DCA /* ExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionViewController.swift; sourceTree = "<group>"; };
 		0419F92C2530857700301DCA /* DataDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataDocument.swift; sourceTree = "<group>"; };
+		041B67B3255B31D700E271CB /* PerformanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceManager.swift; sourceTree = "<group>"; };
+		041B67BA255B42D400E271CB /* PerformanceDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceDetailsViewController.swift; sourceTree = "<group>"; };
 		0442759B252C5D6D005DA5B2 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		0442759C252C5D6D005DA5B2 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		0442759D252C5D6D005DA5B2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +70,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		041B67B7255B321300E271CB /* Perforamance */ = {
+			isa = PBXGroup;
+			children = (
+				041B67BA255B42D400E271CB /* PerformanceDetailsViewController.swift */,
+				04CFB92A2559BB540023D3D6 /* CreatePerformanceViewController.swift */,
+				041B67B3255B31D700E271CB /* PerformanceManager.swift */,
+			);
+			path = Perforamance;
+			sourceTree = "<group>";
+		};
+		041B67B8255B325000E271CB /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				0442759B252C5D6D005DA5B2 /* ProfileViewController.swift */,
+				0419F92A25304EB100301DCA /* ExtensionViewController.swift */,
+				04D25608252B42E00041FB47 /* EditProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		04D255F8252B42DF0041FB47 = {
 			isa = PBXGroup;
 			children = (
@@ -87,18 +111,16 @@
 		04D25603252B42DF0041FB47 /* NavApp */ = {
 			isa = PBXGroup;
 			children = (
+				041B67B7255B321300E271CB /* Perforamance */,
 				047CE57D2555A44900304CF0 /* StorageDataManager.swift */,
 				04D25604252B42DF0041FB47 /* AppDelegate.swift */,
-				04CFB92A2559BB540023D3D6 /* CreatePerformanceViewController.swift */,
 				04D25606252B42DF0041FB47 /* SceneDelegate.swift */,
 				0442759D252C5D6D005DA5B2 /* LoginViewController.swift */,
-				0442759B252C5D6D005DA5B2 /* ProfileViewController.swift */,
+				041B67B8255B325000E271CB /* Profile */,
 				047EF512253CD26C00FEA715 /* AuthDataManager.swift */,
 				0442759C252C5D6D005DA5B2 /* RegisterViewController.swift */,
 				04152A55252C755C00B89E93 /* Main.storyboard */,
 				0419F928252F389A00301DCA /* ExtractDataBaseViewController.swift */,
-				0419F92A25304EB100301DCA /* ExtensionViewController.swift */,
-				04D25608252B42E00041FB47 /* EditProfileViewController.swift */,
 				04D2560A252B42E00041FB47 /* DataDocumentViewController.swift */,
 				0419F92C2530857700301DCA /* DataDocument.swift */,
 				047EF50C253B955400FEA715 /* UserDataManager.swift */,
@@ -250,6 +272,8 @@
 				04D25609252B42E00041FB47 /* EditProfileViewController.swift in Sources */,
 				044275A0252C5D6D005DA5B2 /* LoginViewController.swift in Sources */,
 				047EF50D253B955400FEA715 /* UserDataManager.swift in Sources */,
+				041B67B4255B31D700E271CB /* PerformanceManager.swift in Sources */,
+				041B67BB255B42D400E271CB /* PerformanceDetailsViewController.swift in Sources */,
 				04D25605252B42DF0041FB47 /* AppDelegate.swift in Sources */,
 				0419F92D2530857700301DCA /* DataDocument.swift in Sources */,
 				047CE57E2555A44900304CF0 /* StorageDataManager.swift in Sources */,
@@ -400,7 +424,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.me.NavApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.me.TabApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -419,7 +443,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.me.NavApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.me.TabApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

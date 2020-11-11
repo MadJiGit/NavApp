@@ -11,7 +11,7 @@ import UIKit
 class PerformanceDetailsViewController: UIViewController {
     
     @IBOutlet weak var tagEntry: UITextField!
-    @IBOutlet weak var tagsView: UITextView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

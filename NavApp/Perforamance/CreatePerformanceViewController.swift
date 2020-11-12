@@ -10,24 +10,36 @@ import UIKit
 
 class CreatePerformanceViewController: UIViewController {
     
+//    var performanceData: PerformanceManager
 
     @IBOutlet weak var performanceImage: UIImageView!
-    @IBOutlet weak var performanceTitle: UITextField!
-    @IBOutlet weak var performanceDescription: UITextField!
+   
+    @IBOutlet weak var performanceTitleTextView: UITextView!
+    @IBOutlet weak var performanceTagsTextView: UITextView!
     @IBOutlet weak var performanceTypePicker: UIPickerView!
     var privatePerformance = "Private"
-    
-//    var pickerData:[String] = [String]()
-    
     var pickerView = UIPickerView()
-    let pickerData = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6"]
+    var pickerData: [String] = [ "t1", "t2", "t3" ]
+    var tags: [String] = []
+    var typeOfPerformance: String?
+    var tagsOneString: String?
+    var titleText: String?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        loadPerformanceData()
+        
         performanceTypePicker.delegate = self
         performanceTypePicker.dataSource = self
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let createPerformanceModalViewController = segue.destination as? CreatePerformanceModalViewController {
+            createPerformanceModalViewController.delegatPerformanceModal = self
+        }
     }
         
     // MARK: - Add Image Button
@@ -55,10 +67,33 @@ class CreatePerformanceViewController: UIViewController {
     
     // MARK: - Share Button
     @IBAction func shareButtonTapped(_ sender: UIButton) {
+        let text = "type\t\(typeOfPerformance)\nprivate\t\(privatePerformance)\ntitle\t\(titleText)\ntags\t\(tagsOneString)\n"
+        alert(message: text)
+    }
+}
+
+extension CreatePerformanceViewController : CreatePerformanceModalViewControllerDelegate {
+
+    func passPerformanceDataToPerformanceViewController(_ tags: [String], _ titleText: String?){
+        
+        self.tags = tags
+        self.titleText = titleText
+        
+        performanceTagsTextView.text = ""
+        performanceTitleTextView.text = ""
+        self.tagsOneString = self.tags.joined(separator: " ")
+        
+        performanceTagsTextView.text = self.tagsOneString
+        performanceTitleTextView.text = self.titleText
     }
 }
 
 extension CreatePerformanceViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    func loadPerformanceData() {
+//        performanceData = PerformanceManager()
+//        pickerData = performanceData.getPerformanceTypesCollection()
+    }
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -69,6 +104,7 @@ extension CreatePerformanceViewController: UIPickerViewDelegate, UIPickerViewDat
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        self.typeOfPerformance = pickerData[row]
         return pickerData[row]
     }
     

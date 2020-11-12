@@ -20,13 +20,13 @@
 		04EFE8E1255C14B700ABDBB3 /* AuthDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EFE8D2255C14B700ABDBB3 /* AuthDataManager.swift */; };
 		04EFE8E2255C14B700ABDBB3 /* PerformanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EFE8D4255C14B700ABDBB3 /* PerformanceManager.swift */; };
 		04EFE8E3255C14B700ABDBB3 /* CreatePerformanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EFE8D5255C14B700ABDBB3 /* CreatePerformanceViewController.swift */; };
-		04EFE8E4255C14B700ABDBB3 /* PerformanceDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EFE8D6255C14B700ABDBB3 /* PerformanceDetailsViewController.swift */; };
 		04EFE8E5255C14B700ABDBB3 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EFE8D8255C14B700ABDBB3 /* EditProfileViewController.swift */; };
 		04EFE8E6255C14B700ABDBB3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EFE8D9255C14B700ABDBB3 /* ProfileViewController.swift */; };
 		04EFE8E7255C14B700ABDBB3 /* ExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EFE8DA255C14B700ABDBB3 /* ExtensionViewController.swift */; };
 		04EFE8E8255C14B700ABDBB3 /* ExtractDataBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EFE8DC255C14B700ABDBB3 /* ExtractDataBaseViewController.swift */; };
 		04EFE8E9255C14B700ABDBB3 /* DataDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EFE8DD255C14B700ABDBB3 /* DataDocumentViewController.swift */; };
 		04EFE8EA255C14B700ABDBB3 /* DataDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EFE8DE255C14B700ABDBB3 /* DataDocument.swift */; };
+		04EFE905255D686600ABDBB3 /* CreatePerformanceModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EFE904255D686600ABDBB3 /* CreatePerformanceModalViewController.swift */; };
 		9E631317D0DED2AE38D9FA5D /* Pods_NavApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EB709B722F862262502229C /* Pods_NavApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,13 +46,13 @@
 		04EFE8D2255C14B700ABDBB3 /* AuthDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthDataManager.swift; sourceTree = "<group>"; };
 		04EFE8D4255C14B700ABDBB3 /* PerformanceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceManager.swift; sourceTree = "<group>"; };
 		04EFE8D5255C14B700ABDBB3 /* CreatePerformanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePerformanceViewController.swift; sourceTree = "<group>"; };
-		04EFE8D6255C14B700ABDBB3 /* PerformanceDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceDetailsViewController.swift; sourceTree = "<group>"; };
 		04EFE8D8255C14B700ABDBB3 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		04EFE8D9255C14B700ABDBB3 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		04EFE8DA255C14B700ABDBB3 /* ExtensionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionViewController.swift; sourceTree = "<group>"; };
 		04EFE8DC255C14B700ABDBB3 /* ExtractDataBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtractDataBaseViewController.swift; sourceTree = "<group>"; };
 		04EFE8DD255C14B700ABDBB3 /* DataDocumentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataDocumentViewController.swift; sourceTree = "<group>"; };
 		04EFE8DE255C14B700ABDBB3 /* DataDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataDocument.swift; sourceTree = "<group>"; };
+		04EFE904255D686600ABDBB3 /* CreatePerformanceModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePerformanceModalViewController.swift; sourceTree = "<group>"; };
 		0EB709B722F862262502229C /* Pods_NavApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NavApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		544978F193B1A910C414121F /* Pods-NavApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NavApp.debug.xcconfig"; path = "Target Support Files/Pods-NavApp/Pods-NavApp.debug.xcconfig"; sourceTree = "<group>"; };
 		661CDFC0CD1D10D335723EC6 /* Pods-NavApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NavApp.release.xcconfig"; path = "Target Support Files/Pods-NavApp/Pods-NavApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -121,9 +121,9 @@
 		04EFE8D3255C14B700ABDBB3 /* Perforamance */ = {
 			isa = PBXGroup;
 			children = (
+				04EFE904255D686600ABDBB3 /* CreatePerformanceModalViewController.swift */,
 				04EFE8D4255C14B700ABDBB3 /* PerformanceManager.swift */,
 				04EFE8D5255C14B700ABDBB3 /* CreatePerformanceViewController.swift */,
-				04EFE8D6255C14B700ABDBB3 /* PerformanceDetailsViewController.swift */,
 			);
 			path = Perforamance;
 			sourceTree = "<group>";
@@ -282,13 +282,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				04EFE8E2255C14B700ABDBB3 /* PerformanceManager.swift in Sources */,
-				04EFE8E4255C14B700ABDBB3 /* PerformanceDetailsViewController.swift in Sources */,
 				0442759F252C5D6D005DA5B2 /* RegisterViewController.swift in Sources */,
 				04EFE8E7255C14B700ABDBB3 /* ExtensionViewController.swift in Sources */,
 				04EFE8E0255C14B700ABDBB3 /* UserDataManager.swift in Sources */,
 				044275A0252C5D6D005DA5B2 /* LoginViewController.swift in Sources */,
 				04EFE8E5255C14B700ABDBB3 /* EditProfileViewController.swift in Sources */,
 				04EFE8E9255C14B700ABDBB3 /* DataDocumentViewController.swift in Sources */,
+				04EFE905255D686600ABDBB3 /* CreatePerformanceModalViewController.swift in Sources */,
 				04D25605252B42DF0041FB47 /* AppDelegate.swift in Sources */,
 				04EFE8DF255C14B700ABDBB3 /* StorageDataManager.swift in Sources */,
 				04D25607252B42DF0041FB47 /* SceneDelegate.swift in Sources */,

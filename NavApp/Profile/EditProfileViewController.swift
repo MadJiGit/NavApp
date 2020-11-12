@@ -28,7 +28,7 @@ class EditProfileViewController: UIViewController {
     
     let storage = Storage.storage()
     
-    weak var delegateTest: EditProfileViewControllerDelegate?
+    weak var delegateEditProfile: EditProfileViewControllerDelegate?
     
     override func viewDidLoad() {
         
@@ -154,7 +154,7 @@ extension EditProfileViewController {
                     print("Commit error!")
                     return
                 } else {
-                    self.delegateTest?.reloadUserDataToProfileViewController(self)
+                    self.delegateEditProfile?.reloadUserDataToProfileViewController(self)
 //                    self.showDisplayNameTextView(name, self.profileInfoTextView)
                     self.showCurrentUserData()
                     

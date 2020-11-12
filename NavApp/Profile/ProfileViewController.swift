@@ -30,7 +30,7 @@ class ProfileViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let editProfileViewConroller = segue.destination as? EditProfileViewController {
-            editProfileViewConroller.delegateTest = self
+            editProfileViewConroller.delegateEditProfile = self
         }
     }
     

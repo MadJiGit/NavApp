@@ -20,7 +20,7 @@ class CreatePerformanceViewController: UIViewController {
     var privatePerformance = "Private"
     var pickerView = UIPickerView()
     var pickerData: [String] = [ "t1", "t2", "t3" ]
-    var tags: [String] = []
+    var tags: [String] = [String]()
     var typeOfPerformance: String?
     var tagsOneString: String?
     var titleText: String?

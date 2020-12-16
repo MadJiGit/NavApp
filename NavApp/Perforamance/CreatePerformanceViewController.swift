@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 class CreatePerformanceViewController: UIViewController {
     
 //    var performanceData: PerformanceManager
+    
+//    var db = Firestore!
 
     @IBOutlet weak var performanceImage: UIImageView!
+    var performance: PerformanceManager?
    
     @IBOutlet weak var performanceTitleTextView: UITextView!
     @IBOutlet weak var performanceTagsTextView: UITextView!
@@ -24,6 +28,8 @@ class CreatePerformanceViewController: UIViewController {
     var typeOfPerformance: String?
     var tagsOneString: String?
     var titleText: String?
+    var performanceImageUrl: URL?
+    var uid: String?
     
     
     override func viewDidLoad() {
@@ -69,6 +75,39 @@ class CreatePerformanceViewController: UIViewController {
     @IBAction func shareButtonTapped(_ sender: UIButton) {
         let text = "type\t\(typeOfPerformance)\nprivate\t\(privatePerformance)\ntitle\t\(titleText)\ntags\t\(tagsOneString)\n"
         alert(message: text)
+        
+        /*
+        guard let performanceTypesCollection = typeOfPerformance,
+              let performancePrivateOrPublic = privatePerformance as? String,
+              let performanceTitle = titleText,
+              let performanceTagsCollection = tags as? [String],
+              let performanceImageUrlString = "" as? String,
+              let performanceImage = performanceImage as? UIImage else {
+            
+            print("Perforamnce data is not correct")
+            return
+        }
+        */
+        addDataToDB()
+    }
+}
+
+extension CreatePerformanceViewController {
+    
+    func addDataToDB(){
+        
+        performanceImageUrl = URL(string: "performanceImage/\(self.uid).jpg")
+        
+        performance = PerformanceManager(self.typeOfPerformance,
+                                         self.performanceImageUrl,
+                                             self.performanceImage.image,
+                                             self.titleText,
+                                             self.tags,
+                                             self.uid,
+                                             self.privatePerformance
+                                                    )
+        
+        
     }
 }
 

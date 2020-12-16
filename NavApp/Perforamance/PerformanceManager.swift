@@ -45,7 +45,6 @@ class PerformanceManager {
         self.setPerformanceUid(uid!)
         self.setPerformancePriveOrPublic(privateOrPublic!)
     }
-    
 }
 
 extension PerformanceManager {
